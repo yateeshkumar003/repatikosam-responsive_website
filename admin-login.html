@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login • REPATI KOSAM</title>
+  <link rel="stylesheet" href="admin-login.css" />
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <!-- Left Side: Logo -->
+    <div class="login-left">
+      <img src="assets/RK_LOGO_1.png" alt="REPATI KOSAM Logo" class="logo-image" />
+    </div>
+
+    <!-- Right Side: Login Form -->
+    <div class="login-right">
+      <h1>Admin Panel</h1>
+      <p>Sign in to access the dashboard</p>
+      <input type="text" id="adminUser" placeholder="Username" />
+      <input type="password" id="adminPass" placeholder="Password" />
+      <button id="loginBtn">Sign In</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginBtn').addEventListener('click', () => {
+      const u = document.getElementById('adminUser').value.trim();
+      const p = document.getElementById('adminPass').value.trim();
+
+      // ✅ Change credentials as needed
+      if (u === 'admin' && p === 'password123') {
+        localStorage.setItem('isAdmin', 'true');
+        location.href = 'admin.html';
+      } else {
+        alert('❌ Invalid admin credentials');
+      }
+    });
+  </script>
+</body>
+</html>

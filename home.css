@@ -1,0 +1,383 @@
+/* General reset & fonts */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Layout containers */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.container {
+  display: flex;
+  flex: 1;
+  min-height: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #004aad;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px;
+  box-shadow: 2px 0 10px #004aad;
+  flex-shrink: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
+}
+.logo-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.logo-section img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.logo-section h2 {
+  margin: 0;
+  font-size: 22px;
+}
+.logo-section p {
+  font-size: 14px;
+  color: #e0e0e0;
+}
+.nav-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.nav-links a:hover {
+  background: #003080;
+}
+.logout-btn {
+  margin-top: 20px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  background: #cc0000;
+}
+
+/* Content & Widgets */
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  padding: 30px;
+  gap: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.main-content {
+  flex: 2;
+  min-width: 300px;
+  position: relative;
+}
+.main-content::after {
+  content: '';
+  background: url('assets/RK_LOGO_1.png') no-repeat center;
+  background-size: 300px;
+  opacity: 0.1;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+}
+.main-content > * {
+  position: relative;
+  z-index: 1;
+}
+.main-content h1 {
+  color: #004aad;
+  margin-bottom: 15px;
+}
+.main-content p {
+  font-size: 18px;
+  color: #333;
+}
+.welcome-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #004aad;
+  margin-bottom: 15px;
+}
+.right-widgets {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+.profile-photo-widget {
+  display: flex;
+  justify-content: center;
+}
+.profile-photo-widget img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px #004aad;
+}
+
+/* Widget Cards */
+.widget {
+  background: white;
+  margin: 20px;
+  border-left: 6px solid #004aad;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #004aad;
+  width: 100%;
+}
+.widget h3 {
+  margin-top: 0;
+  color: #004aad;
+}
+.widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.widget li {
+  padding: 5px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Leaderboard Table */
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.leaderboard-table th {
+  background: #f0f0f0;
+  color: #004aad;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.scrollable-body {
+  display: block;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+}
+.scrollable-body tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.scrollable-body td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+
+/* CodeMirror Editor Styling */
+#liveCodingEditorContainer {
+  margin-top: 30px;
+}
+.editor-wrapper {
+  background: white;
+  padding: 20px;
+  border: 2px solid #004aad;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.editor-header .left-tools {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.editor-header select, .editor-header textarea {
+  font-size: 14px;
+}
+.CodeMirror {
+  height: 300px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+#editorOutput {
+  margin-top: 15px;
+  padding: 10px;
+  background: #f7f7f7;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  color: #333;
+  font-family: monospace;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+}
+#runBtn, #closeBtn {
+  padding: 6px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+}
+#runBtn {
+  background: #004aad;
+  color: white;
+}
+#runBtn:hover {
+  background: #003080;
+}
+#closeBtn {
+  background: #ff4d4d;
+}
+#closeBtn:hover {
+  background: #cc0000;
+}
+
+/* Top Navbar */
+.top-navbar {
+  display: none;
+  background-color: #004aad;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+.top-navbar img {
+  height: 40px;
+  border-radius: 8px;
+}
+.top-navbar .logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+#toggleMenu {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Small Sidebar Toggle Logic */
+.sidebar.active {
+  display: flex !important;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  background-color: #004aad;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Media Queries */
+
+/* XS and SM devices */
+@media (max-width: 767.98px) {
+  .top-navbar {
+    display: flex;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    display: none;
+  }
+  .content-wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .right-widgets {
+    width: 100%;
+    align-items: center;
+  }
+  .main-content, .right-widgets {
+    align-items: center;
+  }
+}
+
+/* MD devices */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .top-navbar {
+    display: flex;
+  }
+  .sidebar {
+    display: none;
+  }
+  .sidebar.active {
+    display: flex !important;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .content-wrapper {
+    flex-direction: column;
+    padding: 30px;
+  }
+  .right-widgets {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* ✅ LG and XL devices with Profile Photo aligned Right */
+@media (min-width: 992px) {
+  .top-navbar {
+    display: none;
+  }
+  .container {
+    flex-direction: row;
+  }
+  .content-wrapper {
+    flex-direction: row;
+    padding: 40px;
+  }
+  .right-widgets {
+    align-items: flex-end;
+    width: 100%;
+  }
+  .profile-photo-widget {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  .widget {
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Coding Compiler</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+  <link rel="stylesheet" href="live-coding.css" />
+</head>
+<body>
+
+  <div class="timer-box">
+    <div id="timer">⏱️ 00:00</div>
+    <button class="quit-btn" onclick="quitSession()">❌ Quit</button>
+  </div>
+
+  <div class="editor-container">
+    <h1>Live Coding</h1>
+
+    <label for="language">Language:</label>
+    <select id="language">
+      <option value="54">C</option>
+      <option value="62">Java</option>
+      <option value="71">Python</option>
+    </select>
+
+    <textarea id="code">// Write your code here</textarea>
+
+    <label for="stdin">Input:</label>
+    <textarea id="stdin" placeholder="Optional Input..."></textarea>
+
+    <button onclick="runCode()">▶️ Run Code</button>
+
+    <div id="output">🔽 Output will appear here...</div>
+
+    <div class="leaderboard">
+      <h2>🏆 Leaderboard</h2>
+      <ul id="leaderboard-list">
+        <li>🥇 Abhinav R - 1980</li>
+        <li>🥈 Yateesh K - 1950</li>
+        <li>🥉 Sneha M - 1870</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
+  <script src="live-coding.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard • REPATI KOSAM</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    
+    <div class="nav-wrapper">
+      <nav>
+        <button data-tab="leaderboard" class="active">Leaderboard</button>
+        <button data-tab="events">Events</button>
+        <button data-tab="mocks">Mock Tests</button>
+        <button data-tab="meetings">Schedule Meetings</button>
+        <button data-tab="assignments">Assignments</button>
+      </nav>
+      <button id="logout" class="logout-btn">Logout</button>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <!-- (No changes here; same content as your original) -->
+    <section id="leaderboard" class="tab active">
+      <h3>🏆 Leaderboard</h3>
+      <table id="lbTable">
+        <thead><tr><th>#</th><th>Name</th><th>Rating</th><th>Action</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <button id="addLb">Add Entry</button>
+    </section>
+
+    <section id="events" class="tab">
+      <h3>📅 Today & Upcoming Events</h3>
+      <textarea id="eventsInput" placeholder="One event per line"></textarea>
+      <button id="saveEvents">Save Events</button>
+    </section>
+
+    <section id="mocks" class="tab">
+      <h3>📝 Mock Tests</h3>
+      <textarea id="mocksInput" placeholder="One mock test per line"></textarea>
+      <button id="saveMocks">Save Mock Tests</button>
+    </section>
+
+    <section id="meetings" class="tab">
+      <h3>📆 Schedule a Meeting</h3>
+      <label for="meetingType">Type:</label>
+      <select id="meetingType">
+        <option value="gd">Group Discussion</option>
+        <option value="jam">JAM</option>
+        <option value="class">Daily Class</option>
+      </select>
+      <textarea id="meetingLink" placeholder="Paste meeting link"></textarea>
+      <button id="saveMeeting">Schedule Meeting</button>
+      <ul id="meetingList"></ul>
+    </section>
+
+    <section id="assignments" class="tab">
+      <h3>📂 Assignments</h3>
+      <label for="assignCat">Category:</label>
+      <select id="assignCat">
+        <option value="htmlcssjs">HTML/CSS/JS</option>
+        <option value="javascript">JavaScript</option>
+        <option value="c">C</option>
+        <option value="cpp">C++</option>
+        <option value="java">Java</option>
+        <option value="python">Python</option>
+        <option value="sql">SQL</option>
+        <option value="cloud">Cloud</option>
+      </select>
+      <textarea id="assignInput" placeholder="One question per line"></textarea>
+      <button id="saveAssign">Save Assignments</button>
+    </section>
+  </div>
+
+  <script src="admin.js"></script>
+
+</body>
+</html>

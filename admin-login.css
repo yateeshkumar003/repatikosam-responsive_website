@@ -1,0 +1,102 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body.login-page {
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9f0ff;
+}
+
+/* Container */
+.login-container {
+  display: flex;
+  width: 90%;
+  max-width: 1000px;
+  height: 600px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Left Logo */
+.login-left {
+  flex: 1;
+  background-color: #004aad;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Right Login Form */
+.login-right {
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+.login-right h1 {
+  font-size: 32px;
+  color: #004aad;
+  margin-bottom: 10px;
+}
+.login-right p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #555;
+}
+.login-right input {
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  outline: none;
+}
+.login-right input:focus {
+  border-color: #004aad;
+}
+.login-right button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.login-right button:hover {
+  background-color: #003080;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .login-left,
+  .login-right {
+    width: 100%;
+    height: auto;
+    padding: 40px;
+  }
+  .logo-image {
+    max-width: 60%;
+  }
+}
